@@ -27,7 +27,7 @@ async function start() {
   
   app.use(errorHandler);
 
-  app.listen(expressConfig.port, () => {
-    console.log(`App is listening on port ${expressConfig.port}`);
+  app.listen(expressConfig.port || 3000, () => {
+    console.log(`App is listening on port ${expressConfig.port || 3000}`);
   });
 }
