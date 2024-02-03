@@ -13,6 +13,8 @@ start();
 async function start() {
   const app = express();
 
+  app.set('trust proxy', 1);
+
   const corsOptions = {
     origin: expressConfig.DOMAIN_NAME,
   };
@@ -24,10 +26,10 @@ async function start() {
   app.use(limiter);
   app.use(['PUT', 'POST'], requireObjectBody);
   routes(app);
-  
+
   app.use(errorHandler);
 
-  app.listen(expressConfig.port || 3000, () => {
-    console.log(`App is listening on port ${expressConfig.port || 3000}`);
+  app.listen(expressConfig.port, () => {
+    console.log(`App is listening on port ${expressConfig.port}`);
   });
 }

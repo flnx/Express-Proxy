@@ -8,13 +8,13 @@ const config = {
     WEATHER_API_KEY: process.env.WEATHER_API_KEY,
   },
   production: {
-    port: process.env.PROD_PORT,
+    port: process.env.PROD_PORT || 8080,
     DOMAIN_NAME: process.env.DOMAIN_NAME,
     WEATHER_DOMAIN: process.env.WEATHER_DOMAIN,
     WEATHER_API_KEY: process.env.WEATHER_API_KEY,
   },
 };
 
-const env = process.env.NODE_ENV || 'development';
+// const env = process.env.NODE_ENV || 'development';
 
-module.exports = config[env || 'production'];
+module.exports = config.production;

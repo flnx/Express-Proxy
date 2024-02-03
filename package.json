@@ -6,9 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "set NODE_ENV=development&& nodemon ./index.js",
-    "build": "set NODE_ENV=production&& node ./index.js"
+    "start": "node index.js"
   },
   "author": "KG",
+  "engines": {
+    "node": ">=20.11.0"
+  },
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
@@ -17,6 +20,7 @@
     "express-rate-limit": "^7.1.5"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.0",
     "nodemon": "^3.0.3"
   }
 }
